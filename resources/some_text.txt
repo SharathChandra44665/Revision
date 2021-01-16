@@ -1,0 +1,6 @@
+hello Sharath
+12,3,2
+Apple
+Microsoft
+Linux
+Android
