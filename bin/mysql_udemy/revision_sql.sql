@@ -92,3 +92,7 @@ INSERT INTO Unique_cats(cat_id,name, age) VALUES(2,'qwer',12);
 SHOW WARNINGS;
 
 /* auto increment*/
+
+CREATE TABLE unique_cats2(cat_id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(100),
+age INT, PRIMARY KEY(cat_id) );
