@@ -96,3 +96,31 @@ SHOW WARNINGS;
 CREATE TABLE unique_cats2(cat_id INT NOT NULL AUTO_INCREMENT,
 name VARCHAR(100),
 age INT, PRIMARY KEY(cat_id) );
+INSERT INTO unique_cats2 (name, age) VALUES('Blue',11);
+
+SELECT * FROM unique_cats2
+INSERT INTO unique_cats2 (name, age) VALUES('john',3);
+INSERT INTO Unique_cats2(cat_id,name, age) VALUES(4,'trump',12);
+INSERT INTO Unique_cats2(name, age) VALUES('zebra',12);
+SELECT * FROM unique_cats2
+
+DESC unique_cats2
+
+DROP TABLE EMPLOYEES;
+CREATE TABLE Employees(id INT NOT NULL AUTO_INCREMENT,
+last_name VARCHAR(100) NOT NULL,
+first_name VARCHAR(100) NOT NULL,
+Middle_name VARCHAR(100), 
+age INT NOT NULL, 
+current_status VARCHAR(50) NOT NULL DEFAULT 'employed',
+PRIMARY KEY (id));
+
+DESC employees;
+
+INSERT INTO employees (last_name,first_name,middle_name,age,current_status) VALUES ('LNU','Sharathchandra',NULL, 25, 'ex-employed');
+INSERT INTO employees (last_name,first_name,age) VALUES ('Jr','Robert', 26);
+
+SELECT * FROM employees;
+INSERT INTO employees (last_name,first_name,middle_name,age) VALUES ('Transylvania','Mavis','D', 118);
+SELECT * FROM employees;
+
