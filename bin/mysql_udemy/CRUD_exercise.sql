@@ -47,3 +47,4 @@ SELECT * FROM Shirts WHERE Last_worn=200;
 DELETE FROM shirts WHERE last_worn=200;
 
 SELECT * FROM Shirts WHERE article='tank top';
+
