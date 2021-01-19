@@ -66,3 +66,68 @@ SELECT title FROM books;
 SELECT SUBSTRING(title,1,10) AS 'Short title' FROM books;
 
 SELECT CONCAT(SUBSTRING(title,1,10),".....") AS 'Short Title' FROM books;
+
+SELECT REPLACE("Hello World","Hell", "#$%^");
+
+SELECT REPLACE("Hello World", "o", "7") AS "replaced";
+/*
+ * case sensitive
+*/
+
+SELECT REPLACE("HellO World", 'o','7') AS "replace";
+
+SELECT REPLACE("Cheese bread coffee milk"," "," and ") AS "REPLACE";
+
+SELECT REPLACE(title,"e",3) AS "e replaced 3" FROM Books;
+-- hello this is a single line comment
+--SELECT CONCAT(title )
+SELECT CHAR_LENGTH("Hello world");
+
+DESC books;
+
+SELECT author_lname as "last name", CHAR_LENGTH(author_lname) as "last name length" FROM books;
+
+--author_lname is 6 charecters long
+
+SELECT CONCAT(author_lname," is ", CHAR_LENGTH(author_lname), " charecters long") AS "Lname length" FROM books;
+
+SELECT REVERSE(UPPER("why does my cat look at me with such hatred?")) as "Text";
+
+--I-like-cats
+
+SELECT REPLACE(title," ","->") as "Title" FROM books;
+
+SELECT author_lname AS "forwards", REVERSE(author_lname) AS "Backwards" FROM books;
+
+SELECT CONCAT(UPPER(author_fname)," ",UPPER(author_lname)) AS "full name in caps" FROM Books;
+-- modifying above code
+SELECT UPPER(CONCAT((author_fname)," ",(author_lname))) AS "full name in caps" FROM Books;
+
+DESC Books;
+--select stock_quantity FROM books;
+
+SELECT CONCAT(title," was released in ", released_year) AS "Blurb" FROM Books;
+
+SELECT title, CHAR_LENGTH(title) AS "charecter count" FROM Books;
+
+SELECT CONCAT(SUBSTRING(title,1,10),"...") AS "short title", 
+	CONCAT(author_Lname,",",author_Fname) AS "author", 
+	CONCAT(stock_quantity, " in stock") AS "quantity" 
+	FROM BOOKS 
+	WHERE BOOK_ID IN (3,9)
+
+	
+INSERT INTO books
+    (title, author_fname, author_lname, released_year, stock_quantity, pages)
+    VALUES ('10% Happier', 'Dan', 'Harris', 2014, 29, 256), 
+           ('fake_book', 'Freida', 'Harris', 2001, 287, 428),
+           ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
+
+--DISTINCT
+
+--SELECT DISTINCT author_lname FROM books;
+
+INSERT INTO books (title, author_fname, author_lname, released_year, stock_quantity, pages) VALUES ( '10% Happier' , 'Dan' , 'Harris' , 2014 , 29 , 256 ), ( 'fake_book' , 'Freida' , 'Harris' , 2001 , 287 , 428 ), ( 'Lincoln In The Bardo' , 'George' , 'Saunders' , 2017 , 1000 , 367 );
+
+SELECT title FROM Books;
+
