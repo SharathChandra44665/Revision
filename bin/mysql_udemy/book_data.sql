@@ -131,3 +131,81 @@ INSERT INTO books (title, author_fname, author_lname, released_year, stock_quant
 
 SELECT title FROM Books;
 
+SELECT CAST('2021-1-30' AS DATETIME);
+
+SELECT Title, author_lname FROM books where author_lname='lahiri' or author_lname='smith' OR author_lname='Carver';
+
+SELECT Title, author_lname FROM books where 
+	author_lname IN ('lahiri', 'smith', 'CarveR' );
+	
+SELECT * FROM books;
+
+SELECT title, released_year FROM Books
+	WHERE released_year >=2000 AND released_year%2=0 ORDER BY released_year;
+
+
+SELECT title, released_year FROM Books
+	WHERE released_year%2=1 ORDER BY released_year;
+	
+SELECT title, released_year FROM Books
+	WHERE released_year >=2000 AND released_year%2=1 ORDER BY released_year;
+	
+SELECT title, released_year,
+	case
+		when released_year >=2000 then "Modern Lit"
+		else "20th Century"
+	end AS Genre
+	FROM books;
+	
+	
+	
+SELECT title, stock_quantity,
+	CASE
+		
+		WHEN stock_quantity<= 50 THEN "*"
+		WHEN stock_quantity >50 AND stock_quantity <100 THEN "**"
+		ELSE "***"
+	END AS stock
+	
+	FROM books
+	
+/*
+ * 0
+ * 1
+ * 1
+ * 
+	
+*/
+	
+SELECT title, released_year FROM Books WHERE Released_year != 1980;
+SELECT title, released_year FROM Books WHERE Released_year not in(1980) ;
+
+SELECT Title, author_lname FROM books where author_lname in('Eggers', 'Chabon');
+
+SELECT title,author_lname, released_year from books WHERE AUTHOR_lname ='Lahiri' and released_year> 2000;
+
+desc books;
+
+
+SELECT Title, pages FROM books where pages BETWEEN 100 AND 200;
+
+SELECT Title, author_lname FROM Books WHERE Author_lname like 'C%' or Author_lname like 'S%';
+
+
+SELECT Title, author_lname,
+	CASE
+		WHEN Title Like '%stories%' THEN 'Short stories'
+		WHEN (Title Like '%Just Kids%') OR (Title Like '%A Heartbreaking Work%') then "Memoir"
+		ELSE "Novel"
+	END AS "TYPE"
+	
+	FROM books;
+
+	
+SELECT Title, author_lname, 
+	CASE
+		WHEN COUNT(author_lname)=1 THEN CONCAT(COUNT(author_lname)," book")
+		ELSE CONCAT(COUNT(author_lname)," books")
+	END as "count"
+	FROM BOOKS
+	group by author_lname;
