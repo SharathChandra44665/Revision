@@ -1,3 +1,4 @@
+@@ -1,39 +0,0 @@
 
 select username,created_at FROM users ORDER BY created_at LIMIT 5;
 

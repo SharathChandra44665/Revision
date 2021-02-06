@@ -1,4 +1,5 @@
 
+
 DROP DATABASE instagram_clone;
 CREATE DATABASE instagram_clone;
 USE instagram_clone;
